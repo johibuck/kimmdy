@@ -871,6 +871,10 @@ class RunManager:
         # using the name of the instance for inferability
         shutil.copy(mdp, outputdir / f"{instance}.mdp")
 
+        # grompp reads Morse dissociation energies from ./edissoc.dat
+        if hasattr(self.config, "morsefile"):
+            shutil.copy(self.config.morsefile, outputdir / "edissoc.dat")
+
         # to continue MD after timeout
         if continue_md:
             cpt = files.input["cpt"]

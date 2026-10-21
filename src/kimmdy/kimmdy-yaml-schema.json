@@ -229,6 +229,12 @@
       "pytype": "Path",
       "default": "edissoc.dat"
     },
+    "morsefile": {
+      "title": "morsefile",
+      "description": "Dissociation energies in GROMACS edissoc.dat format (atom types). Copied as edissoc.dat into each MD task directory before grompp, so that morse = yes uses these values instead of the GROMACS built-in table.",
+      "type": "string",
+      "pytype": "Path"
+    },
     "grompp_prefix": {
       "title": "grompp_prefix",
       "description": "Prefix command for grompp execution on non MPI compiled clusters, e.g., 'srun --ntasks=1'.",
